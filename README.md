@@ -102,7 +102,7 @@ roads may currently be charged as if paid. See DEVELOPMENT.md for how to add it.
 
 ## Authors
 
-Sebastian Tovar (s3bxs@outlook.com)
+Sebastian Tovar (s3bxs@outlook.com),
 Jay Weil (weiljt@mail.uc.edu)
 
 ## License
