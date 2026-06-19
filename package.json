@@ -1,0 +1,18 @@
+{
+  "name": "colonist-card-tracker",
+  "version": "0.1.0",
+  "description": "A browser overlay that tracks players' likely resource cards on colonist.io from the public game log.",
+  "type": "module",
+  "scripts": {
+    "test": "node src/test.js && node src/parser.test.js",
+    "test:engine": "node src/test.js",
+    "test:parser": "node src/parser.test.js",
+    "check": "node --check colonist-tracker.user.js"
+  },
+  "keywords": ["catan", "colonist", "userscript", "tampermonkey", "card-counting"],
+  "license": "SEE LICENSE IN LICENSE",
+  "private": true,
+  "devDependencies": {
+    "node-html-parser": "^6.1.0"
+  }
+}
