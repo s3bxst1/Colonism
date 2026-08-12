@@ -159,7 +159,7 @@
   // A loss we are sure about, so both bounds move.
   //
   // The clamp at zero stops the counts going negative, but if it ever actually
-  // does anything then our estimate has drifted away from the real game — a log
+  // does anything then our estimate has drifted away from the real game, a log
   // line was misread or missed. Rather than quietly carry on showing numbers
   // that are wrong, we set a flag that the panel displays, so the user knows to
   // hit reset instead of trusting it.
@@ -182,7 +182,7 @@
    *
    * Spending a resource is proof that you had it. If a player's minimum for
    * that resource is lower than what they just spent, the only reason it is low
-   * is that a steal took the number down — so the fact they could still afford
+   * is that a steal took the number down, so the fact they could still afford
    * to spend it means the steal probably did not take this resource after all.
    *
    * Working out exactly how much that proves takes a little counting. Say there
@@ -198,8 +198,8 @@
    *
    * When deficit is at least k this says x <= 0, so none of those steals took
    * the resource and every one of them can have it crossed off. When deficit is
-   * smaller we only learn something about the steals as a group — "at most one
-   * of these took wood" — and that is exactly the kind of relationship the
+   * smaller we only learn something about the steals as a group, "at most one
+   * of these took wood", and that is exactly the kind of relationship the
    * min/max representation cannot store. In that case we cross nothing off and
    * accept the wider estimate, because a wide estimate is fine and a wrong one
    * is not.
@@ -239,7 +239,7 @@
   /*
    * Record a steal.
    *
-   * Sometimes the log names the card — it does when you are the thief or the
+   * Sometimes the log names the card, it does when you are the thief or the
    * victim, since you are allowed to know. In that case nothing is uncertain
    * and it is just a transfer.
    *
@@ -283,7 +283,7 @@
    * The whole thing sits in a loop because the rules feed each other. Closing
    * one steal turns a range into an exact number, which can show that a player
    * has none of something, which crosses that option off a different steal,
-   * which might leave that one with a single option — and so on. Running the
+   * which might leave that one with a single option and so on. Running the
    * rules once would leave some of that unfinished.
    *
    * The guard counter is just insurance against an infinite loop if some future
@@ -453,7 +453,7 @@
    *
    * This deliberately returns copies instead of editing the stored estimate.
    * The side panel can lag the log by a moment, and if a stale total were
-   * written into the state there would be no way to undo it later — the
+   * written into the state there would be no way to undo it later, the
    * estimate would stay wrong for the rest of the game. Recalculating at draw
    * time costs nothing at this scale and cannot corrupt anything. If the total
    * and the log flatly disagree the tightening would push a minimum above a
@@ -1138,8 +1138,8 @@
    * The skip-if-already-seen check at the top is essential. colonist's log is a
    * virtual scroller: rather than keeping every message in the page, it renders
    * only the ones currently visible and reuses those elements as you scroll.
-   * That means the same message gets added to the page over and over — on
-   * scroll, on resize, and every time a new message arrives — and without a
+   * That means the same message gets added to the page over and over, on
+   * scroll, on resize, and every time a new message arrives, and without a
    * guard the counts climb every time.
    *
    * The scroller labels each line with a data-index, which stays the same
@@ -1202,8 +1202,8 @@
   /*
    * Working out who "You" is.
    *
-   * colonist writes the local player in the second person on some lines — "You
-   * stole a card from Bob" — but uses their username everywhere else. That is
+   * colonist writes the local player in the second person on some lines, "You
+   * stole a card from Bob", but uses their username everywhere else. That is
    * one person with two names, and the mapping is not always available at the
    * moment the first "You" line shows up.
    *
@@ -1346,7 +1346,7 @@
     //
     // Two things to be careful about here. First, this observer's callback
     // redraws our own panel, and our panel is part of the page, so changes we
-    // caused would trigger it again — hence the check that ignores anything
+    // caused would trigger it again, hence the check that ignores anything
     // coming from inside it. Second, redrawing on every single mutation is
     // wasteful, so the work is deferred to the next animation frame and
     // repeated triggers in the meantime collapse into one.
